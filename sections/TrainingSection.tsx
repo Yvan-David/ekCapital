@@ -252,7 +252,7 @@ export default function TrainingSection() {
             <strong>$250m+ in annual revenue</strong>. Join our next live training and get the exact framework.
           </p>
 
-          <a href="#register" className="training-cta">
+          <a href="register" className="training-cta">
             Learn To Scale →
           </a>
 

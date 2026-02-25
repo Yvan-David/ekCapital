@@ -3,12 +3,13 @@ import { Button } from "../components/ui/button";
 import { Play, TrendingUp, Users, Target } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { motion } from "motion/react";
+import Image from "next/image";
 
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Video with Overlay */}
-      <div className="absolute inset-0">
+      {/* <div className="absolute inset-0">
         <iframe
           src="https://www.youtube.com/embed/qSJ1QER_zRM?autoplay=1&mute=1&loop=1&playlist=qSJ1QER_zRM&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1&vq=hd1080"
           className="w-full h-full pointer-events-none"
@@ -25,6 +26,17 @@ export function Hero() {
           }}
           title="Hero Background Video"
         />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
+      </div> */}
+      <div className="absolute inset-0">
+        <Image
+          src="/figmasalesgrowth.png" // put your image inside /public folder
+          alt="Hero Background"
+          fill
+          priority
+          className="object-cover"
+        />
+
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
       </div>
 
@@ -146,5 +158,110 @@ export function Hero() {
         </div>
       </motion.div>
     </section>
+
+// {/* <section className="relative min-h-screen flex items-center bg-[#0B0F14] overflow-hidden">
+
+//   <div className="absolute inset-0 pointer-events-none">
+
+//     <div className="absolute right-[5%] top-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-orange-500/10 blur-[160px] rounded-full" />
+
+//     <div className="absolute right-[3%] top-1/2 -translate-y-1/2 w-[42%] max-w-2xl">
+//       <Image
+//         src="/figmasalesgrowth.png"
+//         alt="Growth Illustration"
+//         width={900}
+//         height={900}
+//         priority
+//         className="object-contain w-full h-auto"
+//       />
+//     </div>
+
+//     <div className="absolute inset-0 bg-gradient-to-r from-[#0B0F14] via-[#0B0F14]/85 via-[#0B0F14]/40 to-transparent" />
+//   </div>
+
+//   <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 w-full">
+//     <div className="max-w-2xl">
+
+//       <motion.h1
+//         initial={{ opacity: 0, y: 30 }}
+//         animate={{ opacity: 1, y: 0 }}
+//         transition={{ duration: 0.8 }}
+//         className="text-white mb-6 leading-tight"
+//         style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}
+//       >
+//         Transform Sales.
+//         <br />
+//         <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
+//           Amplify Cashflow.
+//         </span>
+//         <br />
+//         Accelerate Growth.
+//       </motion.h1>
+
+//       <motion.p
+//         initial={{ opacity: 0, y: 20 }}
+//         animate={{ opacity: 1, y: 0 }}
+//         transition={{ duration: 0.8, delay: 0.2 }}
+//         className="text-white/80 mb-8"
+//         style={{ fontSize: "1.25rem", lineHeight: "1.8" }}
+//       >
+//         Empowering CEOs and executive teams to scale with precision,
+//         purpose, and sustainable profitability through strategic sales
+//         architecture.
+//       </motion.p>
+
+//       <motion.div
+//         initial={{ opacity: 0, y: 20 }}
+//         animate={{ opacity: 1, y: 0 }}
+//         transition={{ duration: 0.8, delay: 0.4 }}
+//         className="flex flex-wrap gap-4"
+//       >
+//         <Button
+//           size="lg"
+//           className="bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 shadow-xl shadow-orange-500/30 hover:shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 hover:scale-105"
+//         >
+//           Start Your Transformation
+//         </Button>
+
+//         <Button
+//           size="lg"
+//           variant="outline"
+//           className="border-2 border-white/80 text-white hover:bg-white/10 backdrop-blur-sm transition-all duration-300 hover:scale-105"
+//         >
+//           <Play className="w-5 h-5 mr-2" />
+//           Watch How It Works
+//         </Button>
+//       </motion.div>
+//     </div>
+//   </div>
+
+//   <motion.div
+//     initial={{ opacity: 0, y: 20 }}
+//     animate={{ opacity: 1, y: 0 }}
+//     transition={{ duration: 0.8, delay: 0.6 }}
+//     className="absolute bottom-10 right-10 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 shadow-2xl"
+//   >
+//     <div className="flex gap-10">
+//       <div className="text-center">
+//         <Users className="w-6 h-6 text-white mx-auto mb-2" />
+//         <div className="text-white text-lg">500+</div>
+//         <div className="text-white/70 text-sm">Clients Served</div>
+//       </div>
+
+//       <div className="text-center">
+//         <TrendingUp className="w-6 h-6 text-white mx-auto mb-2" />
+//         <div className="text-white text-lg">3x</div>
+//         <div className="text-white/70 text-sm">Growth Achieved</div>
+//       </div>
+
+//       <div className="text-center">
+//         <Target className="w-6 h-6 text-white mx-auto mb-2" />
+//         <div className="text-white text-lg">98%</div>
+//         <div className="text-white/70 text-sm">Success Rate</div>
+//       </div>
+//     </div>
+//   </motion.div>
+
+// </section> */}
   );
 }

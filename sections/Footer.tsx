@@ -27,7 +27,7 @@ export function Footer() {
             <div className="flex items-center gap-4 mt-8 p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
               <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white/20">
                 <Image
-                  src="https://images.unsplash.com/photo-1610631066894-62452ccb927c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBjZW8lMjBwb3J0cmFpdHxlbnwxfHx8fDE3NjE2NjMxNzl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                  src="/coach.jpeg"
                   alt="Founder"
                   width={64}
                   height={64}

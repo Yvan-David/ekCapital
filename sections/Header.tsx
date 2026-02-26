@@ -21,9 +21,9 @@ export function Header() {
     { name: 'Home', path: '/' },
     { name: 'Services', path: '/services' },
     { name: 'About', path: '/about' },
-    { name: 'Insights', path: '/insights' },
-    { name: 'Testimonials', path: '/testimonials' },
-    { name: 'Contact', path: '/contact' },
+    // { name: 'Insights', path: '/insights' },
+    // { name: 'Testimonials', path: '/testimonials' },
+    // { name: 'Contact', path: '/contact' },
   ];
 
   return (
@@ -39,7 +39,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <span className="tracking-wider text-white transition-all duration-300">
-              SalesFlow
+              EK CAPITAL GROUP
             </span>
           </Link>
 
@@ -63,7 +63,7 @@ export function Header() {
             <Button
               className="bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 transition-all duration-300"
             >
-              Book a Strategy Call
+              Contact Us
             </Button>
           </Link>
         </div>

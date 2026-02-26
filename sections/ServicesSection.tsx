@@ -280,41 +280,47 @@ export default function ServicesSection() {
           font-size: 14px;
           color: #72756c;
           line-height: 1.65;
-          margin: 0 0 24px;
+          margin: 0;
           flex: 1;
         }
 
-        .service-cta {
+        /* Single bottom CTA */
+        .services-bottom {
+          display: flex;
+          justify-content: center;
+          margin-top: 52px;
+        }
+
+        .services-main-cta {
           display: inline-flex;
           align-items: center;
-          gap: 8px;
-          color: #131b2a;
-          font-size: 14px;
-          font-weight: 600;
-          text-decoration: none;
-          border: 1.5px solid rgba(19,27,42,0.18);
-          padding: 10px 20px;
-          border-radius: 50px;
-          transition:
-            background 0.25s ease,
-            color 0.25s ease,
-            border-color 0.25s ease,
-            gap 0.25s ease;
-          width: fit-content;
-        }
-
-        .service-card:hover .service-cta {
+          gap: 10px;
           background: #f34900;
           color: #fff;
-          border-color: #f34900;
-          gap: 12px;
+          font-family: 'DM Sans', sans-serif;
+          font-size: 14px;
+          font-weight: 700;
+          letter-spacing: 1.5px;
+          text-transform: uppercase;
+          text-decoration: none;
+          padding: 16px 44px;
+          border-radius: 50px;
+          box-shadow: 0 8px 28px rgba(243,73,0,0.32);
+          transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease, gap 0.22s ease;
         }
 
-        .service-cta-arrow {
-          transition: transform 0.25s ease;
+        .services-main-cta:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 16px 40px rgba(243,73,0,0.48);
+          background: #d94000;
+          gap: 16px;
         }
 
-        .service-card:hover .service-cta-arrow {
+        .services-main-cta svg {
+          transition: transform 0.22s ease;
+        }
+
+        .services-main-cta:hover svg {
           transform: translateX(4px);
         }
       `}</style>
@@ -346,17 +352,18 @@ export default function ServicesSection() {
               {/* Description */}
               <p className="service-card-desc">{service.description}</p>
 
-              {/* CTA */}
-              <a href="#" className="service-cta">
-                Read More
-                <span className="service-cta-arrow">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </span>
-              </a>
             </div>
           ))}
+        </div>
+
+        {/* Single Learn More CTA */}
+        <div className="services-bottom">
+          <a href="/services" className="services-main-cta">
+            Explore All Services
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </a>
         </div>
       </section>
     </>

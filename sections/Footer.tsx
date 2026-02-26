@@ -18,14 +18,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <h3 className="text-white mb-4">SalesFlow</h3>
+            <h3 className="text-white mb-4">EK CAPITAL GROUP</h3>
             <p className="text-white/70 mb-6 max-w-sm">
               Transforming businesses through strategic sales architecture and cashflow optimization.
             </p>
             
             {/* Founder Signature */}
             <div className="flex items-center gap-4 mt-8 p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white/20">
+              <div className="w-18 h-18 rounded-full overflow-hidden border-2 border-white/20">
                 <Image
                   src="/coach.jpeg"
                   alt="Founder"
@@ -35,7 +35,7 @@ export function Footer() {
                 />
               </div>
               <div>
-                <p className="text-white">John Anderson</p>
+                <p className="text-white">Esdras Karekezi</p>
                 <p className="text-white/60 text-sm">Founder & CEO Coach</p>
               </div>
             </div>
@@ -82,16 +82,16 @@ export function Footer() {
                   About Us
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/insights" className="text-white/70 hover:text-white transition-colors duration-300">
                   Insights
                 </Link>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <Link href="/testimonials" className="text-white/70 hover:text-white transition-colors duration-300">
                   Testimonials
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link href="/contact" className="text-white/70 hover:text-white transition-colors duration-300">
                   Contact
@@ -110,7 +110,7 @@ export function Footer() {
                   href="mailto:hello@salesflow.com"
                   className="text-white/70 hover:text-white transition-colors duration-300"
                 >
-                  hello@salesflow.com
+                  admin@ekcapitalgroup.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
@@ -119,13 +119,13 @@ export function Footer() {
                   href="tel:+1234567890"
                   className="text-white/70 hover:text-white transition-colors duration-300"
                 >
-                  +1 (234) 567-890
+                  +250 (790) 567-890
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-white/60 mt-0.5" />
                 <span className="text-white/70">
-                  New York, NY 10001
+                  Kigali, Rwanda
                 </span>
               </li>
             </ul>
@@ -153,7 +153,7 @@ export function Footer() {
         <div className="pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white/60 text-sm">
-              © 2025 SalesFlow. All rights reserved.
+              © 2026 EKCAPITALGROUP. All rights reserved.
             </p>
             <div className="flex gap-6">
               <a

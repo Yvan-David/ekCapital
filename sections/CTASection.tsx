@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Button } from '../components/ui/button';
 import { ArrowRight } from 'lucide-react';
 
@@ -20,13 +21,15 @@ export function CTASection() {
           Join hundreds of successful CEOs who have transformed their businesses with SalesFlow. 
           Let's discuss how we can accelerate your journey to sustainable, profitable growth.
         </p>
-        <Button
-          size="lg"
-          className="bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 shadow-xl shadow-orange-500/30 hover:shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 group"
-        >
-          Schedule a Consultation
-          <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-        </Button>
+        <Link href={"/schedule"}>
+            <Button
+            size="lg"
+            className="bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 shadow-xl shadow-orange-500/30 hover:shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 group"
+          >
+            Schedule a Consultation
+            <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+          </Button>
+        </Link>
       </div>
     </section>
   );

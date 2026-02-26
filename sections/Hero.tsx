@@ -4,6 +4,7 @@ import { Play, TrendingUp, Users, Target } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { motion } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
 
 export function Hero() {
   return (
@@ -58,7 +59,7 @@ export function Hero() {
                 Amplify Cashflow.
               </span>
               <br />
-              Accelerate Growth.
+              {/* Accelerate Growth. */}
             </motion.h1>
 
             <motion.p
@@ -80,14 +81,16 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
               className="flex flex-wrap gap-4"
             >
+              <Link href="/schedule">
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 shadow-xl shadow-orange-500/30 hover:shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 hover:scale-105"
                 style={{ fontSize: "1.1rem", padding: "1.5rem 2.5rem" }}
               >
-                Start Your Transformation
+                Schedule a Call
               </Button>
-              <Button
+              </Link>
+              {/* <Button
                 size="lg"
                 variant="outline"
                 className="border-2 border-white/80 text-white hover:bg-white/10 backdrop-blur-sm transition-all duration-300 hover:scale-105"
@@ -95,7 +98,7 @@ export function Hero() {
               >
                 <Play className="w-5 h-5 mr-2" />
                 Watch How It Works
-              </Button>
+              </Button> */}
             </motion.div>
           </div>
 

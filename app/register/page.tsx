@@ -13,22 +13,22 @@ export default function RegisterPage() {
 
   const whyJoin = [
     {
-      icon: '🎯',
+      // icon: '🎯',
       title: 'Personal Attention',
       description: 'Get 1-on-1 coaching directly from John Anderson and his elite team. Your success is our priority.',
     },
     {
-      icon: '📚',
+      // icon: '📚',
       title: 'Proven Frameworks',
       description: 'Get straight to what works. Battle-tested strategies that have generated $2B+ in revenue for our clients.',
     },
     {
-      icon: '🔧',
+      // icon: '🔧',
       title: 'Customized Plan',
       description: 'No cookie-cutter approach. We build a personalized implementation plan specific to your business.',
     },
     {
-      icon: '🚀',
+      // icon: '🚀',
       title: 'Immediate Results',
       description: 'Start immediately upon approval. See tangible progress in the first 90 days.',
     },
@@ -97,7 +97,7 @@ export default function RegisterPage() {
               className="inline-block mb-6 px-4 py-2 rounded-full border"
               style={{ borderColor: 'rgba(243, 73, 0, 0.5)', backgroundColor: 'rgba(243, 73, 0, 0.1)' }}
             >
-              <span style={{ color: '#f34900' }} className="text-sm font-semibold">🚀 Accepting Applications</span>
+              <span style={{ color: '#f34900' }} className="text-sm font-semibold"> Accepting Applications</span>
             </motion.div>
 
             <motion.h1
@@ -135,7 +135,7 @@ export default function RegisterPage() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.8 }}
-              href="https://your-form-url.com" 
+              href="https://tally.so/r/KYM58K" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-block"
@@ -214,7 +214,7 @@ export default function RegisterPage() {
                   transition={{ duration: 0.3 }}
                   className="text-7xl mb-6"
                 >
-                  {item.icon}
+                  {/* {item.icon} */}
                 </motion.div>
                 <h3 className="text-2xl font-bold mb-4" style={{ color: '#ffffff' }}>
                   {item.title}
@@ -251,7 +251,7 @@ export default function RegisterPage() {
               Fill out your application form below. We'll review your information and reach out within 24 hours to schedule your first coaching session.
             </p>
             <motion.a 
-              href="https://your-form-url.com" 
+              href="https://tally.so/r/KYM58K" 
               target="_blank" 
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
@@ -364,7 +364,7 @@ export default function RegisterPage() {
               Join 500+ CEOs who have transformed their businesses with personalized coaching from John Anderson.
             </p>
             <motion.a 
-              href="https://your-form-url.com" 
+              href="https://tally.so/r/KYM58K" 
               target="_blank" 
               rel="noopener noreferrer"
               whileHover={{ scale: 1.08 }}

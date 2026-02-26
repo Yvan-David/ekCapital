@@ -88,7 +88,7 @@ export function AboutSection() {
             </div>
 
             {/* Values Highlights */}
-            <div className="grid grid-cols-3 gap-4 mb-8">
+            {/* <div className="grid grid-cols-3 gap-4 mb-8">
               {[
                 { label: 'Integrity', icon: '🎯' },
                 { label: 'Excellence', icon: '⭐' },
@@ -102,14 +102,14 @@ export function AboutSection() {
                   <div className="text-white/90 text-sm">{value.label}</div>
                 </div>
               ))}
-            </div>
+            </div> */}
 
             <Link href="/about">
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 transition-all duration-300 group"
               >
-                Learn More About John
+                Learn More About Esdras
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
               </Button>
             </Link>

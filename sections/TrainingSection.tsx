@@ -240,20 +240,20 @@ export default function TrainingSection() {
 
         {/* Main Content */}
         <div className="training-content">
-          <div className="training-badge">🎯 Live Training Session</div>
+          {/* <div className="training-badge">🎯 Live Training Session</div> */}
 
           <h2 className="training-headline">
-            Do You Want To<br />
-            <span>Scale Your</span> Business?
+            Do You Want To<br /> Increase your 
+            <span> Sales?</span>
           </h2>
 
           <p className="training-sub">
             Learn from the team that has scaled a portfolio to over{" "}
-            <strong>$250m+ in annual revenue</strong>. Join our next live training and get the exact framework.
+            <strong>$250m+ in annual revenue</strong>. Join our next training and get the exact framework.
           </p>
 
-          <a href="register" className="training-cta">
-            Learn To Scale →
+          <a href="/register" className="training-cta">
+            Join Training →
           </a>
 
           <div className="training-date-row">
@@ -262,8 +262,8 @@ export default function TrainingSection() {
               <span>Next Session: March 15, 2025</span>
             </div>
             <div className="training-date-item">
-              <div className="training-date-dot" />
-              <span>100% Free to Attend</span>
+              {/* <div className="training-date-dot" /> */}
+              {/* <span>100% Free to Attend</span> */}
             </div>
             <div className="training-date-item">
               <div className="training-date-dot" />

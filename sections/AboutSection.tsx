@@ -49,7 +49,7 @@ export function AboutSection() {
               <div className="absolute -bottom-6 -right-6 bg-gradient-to-br from-orange-500 to-orange-600 text-white px-8 py-4 rounded-2xl shadow-2xl shadow-orange-500/30 border border-orange-400/20">
                 <div className="text-center">
                   <div className="text-sm opacity-90">Over</div>
-                  <div className="text-3xl">20 Years</div>
+                  <div className="text-3xl">7 Years</div>
                   <div className="text-sm opacity-90">Experience</div>
                 </div>
               </div>
@@ -64,18 +64,18 @@ export function AboutSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <h2 className="text-white mb-6">
-              Meet the Coach Behind SalesFlow
+              Meet the Coach Behind EK CAPITAL GROUP
             </h2>
             
             <div className="space-y-4 mb-8">
               <p className="text-white/80">
-                John Anderson is a globally recognized sales strategist and executive coach 
+                Esdras Karekezi is a globally recognized sales strategist and executive coach 
                 who has helped hundreds of CEOs and business leaders transform their organizations 
                 through innovative sales architecture and cashflow optimization.
               </p>
               
               <p className="text-white/80">
-                With over 20 years of experience scaling businesses from startup to IPO, 
+                With over 7 years of experience scaling businesses from startup to IPO, 
                 John brings a unique blend of strategic vision and hands-on execution. His 
                 methodology has generated over $2 billion in additional revenue for clients 
                 across diverse industries.

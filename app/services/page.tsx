@@ -886,8 +886,8 @@ export default function ServicesPage() {
             <div className="sp-eyebrow" style={{ justifyContent: "center" }}>Ready?</div>
             <h2 className="sp-cta-title">Let's Build Something <em>Extraordinary</em></h2>
             <p className="sp-cta-sub">Book a free 30-minute discovery call. No pitch, no pressure — just a straight conversation about where you are and where you want to go.</p>
-            <a href="#" className="sp-btn" style={{ fontSize: 14, padding: "17px 40px" }}>
-              Book Free Call
+            <a href="/schedule" className="sp-btn" style={{ fontSize: 14, padding: "17px 40px" }}>
+              Book Call
               <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
             </a>
           </div>

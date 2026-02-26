@@ -194,7 +194,7 @@ export default function ContactPage() {
                       href="mailto:hello@salesflow.com"
                       className="text-white/70 hover:text-orange-400 transition-colors duration-300"
                     >
-                      hello@salesflow.com
+                      admin@ekcapitalgroup.com
                     </a>
                   </div>
                 </div>
@@ -209,7 +209,7 @@ export default function ContactPage() {
                       href="tel:+1234567890"
                       className="text-white/70 hover:text-orange-400 transition-colors duration-300"
                     >
-                      +1 (234) 567-890
+                      +250 (790) 567-890
                     </a>
                   </div>
                 </div>
@@ -222,8 +222,8 @@ export default function ContactPage() {
                     <h4 className="text-white mb-1">Office</h4>
                     <p className="text-white/70">
                       123 Business Avenue<br />
-                      New York, NY 10001<br />
-                      United States
+                      Kigali, KG 10001<br />
+                      Rwanda
                     </p>
                   </div>
                 </div>
@@ -256,11 +256,11 @@ export default function ContactPage() {
                 <div className="space-y-2 text-white/70">
                   <div className="flex justify-between">
                     <span>Monday - Friday</span>
-                    <span>9:00 AM - 6:00 PM EST</span>
+                    <span>9:00 AM - 6:00 PM CAT</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Saturday</span>
-                    <span>10:00 AM - 2:00 PM EST</span>
+                    <span>10:00 AM - 2:00 PM CAT</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Sunday</span>

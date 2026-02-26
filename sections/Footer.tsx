@@ -25,7 +25,7 @@ export function Footer() {
             
             {/* Founder Signature */}
             <div className="flex items-center gap-4 mt-8 p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="w-18 h-18 rounded-full overflow-hidden border-2 border-white/20">
+              <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white/20">
                 <Image
                   src="/coach.jpeg"
                   alt="Founder"

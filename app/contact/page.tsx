@@ -1,277 +1,323 @@
-"use client"
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
-import { Mail, Phone, MapPin, Linkedin, Twitter, Instagram, Send } from 'lucide-react';
-import { motion } from 'motion/react';
-import { toast } from 'sonner';
+'use client';
 
-export default function ContactPage() {
+import { useState } from 'react';
+import Link from 'next/link';
+import { MessageCircle, ArrowLeft } from 'lucide-react';
+
+export default function StrategyCall() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     company: '',
+    role: '',
+    challenge: '',
+    preferredDate: '',
     message: '',
   });
 
-  const [isFocused, setIsFocused] = useState<string | null>(null);
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
-    toast.success('Message sent successfully! We\'ll get back to you within 24 hours.');
-    setFormData({ name: '', email: '', company: '', message: '' });
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    // Handle form submission (integrate with your backend)
+    console.log('Form submitted:', formData);
+    setSubmitted(true);
+    setTimeout(() => {
+      setSubmitted(false);
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        role: '',
+        challenge: '',
+        preferredDate: '',
+        message: '',
+      });
+    }, 3000);
   };
 
   return (
-    <div className="min-h-screen pt-20">
-      {/* Hero Section */}
-      <section className="py-32 bg-gradient-to-b from-[#0A1628]/60 via-[#050b14]/40 to-transparent relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-1/4 right-1/4 w-[600px] h-[600px] bg-gradient-to-br from-orange-900/30 to-blue-900/30 rounded-full blur-3xl"></div>
+    <main className="min-h-screen bg-ek-black pt-32 pb-20">
+      {/* Breadcrumb */}
+      <div className="px-[5%] mb-12">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 text-ek-text hover:text-ek-gold transition-colors text-sm font-heading font-bold uppercase tracking-[0.08em]"
+        >
+          <ArrowLeft size={16} />
+          Back to Home
+        </Link>
+      </div>
+
+      <div className="max-w-4xl mx-auto px-[5%]">
+        {/* Header */}
+        <div className="mb-16">
+          <div className="section-tag">Book a Call</div>
+          <h1 className="text-5xl md:text-6xl font-display text-ek-white leading-tight mb-6">
+            Book Your<br />
+            Strategy Call
+          </h1>
+          <p className="text-lg text-ek-text max-w-2xl">
+            Schedule a 30-minute call with Coach Ezra to discuss your sales challenges and discover the right programme for your business.
+          </p>
         </div>
 
-        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-white mb-6"
-          >
-            Let's Start Your Transformation
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-white/80 max-w-2xl mx-auto"
-          >
-            Ready to unlock your business's full potential? Get in touch with our team 
-            and let's discuss how we can accelerate your journey to sustainable growth.
-          </motion.p>
-        </div>
-      </section>
-
-      {/* Contact Form & Info */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Contact Form */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="text-white mb-8">Send Us a Message</h2>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Name Field */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
+          {/* Form */}
+          <div className="lg:col-span-2">
+            {!submitted ? (
+              <form onSubmit={handleSubmit} className="space-y-6 bg-ek-card border border-ek-border p-8 md:p-12">
+                {/* Name */}
                 <div>
-                  <Label htmlFor="name" className="text-white/80 mb-2 block">
+                  <label className="block text-sm font-heading font-bold text-ek-white mb-3 uppercase tracking-[0.08em]">
                     Full Name *
-                  </Label>
-                  <Input
-                    id="name"
-                    name="name"
+                  </label>
+                  <input
                     type="text"
-                    required
+                    name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    onFocus={() => setIsFocused('name')}
-                    onBlur={() => setIsFocused(null)}
-                    className={`bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-orange-500/50 focus:ring-orange-500/20 transition-all duration-300 ${
-                      isFocused === 'name' ? 'transform scale-[1.02]' : ''
-                    }`}
-                    placeholder="John Anderson"
+                    required
+                    className="w-full bg-ek-black border border-ek-border text-ek-white px-4 py-3 font-body focus:outline-none focus:border-ek-gold transition-colors"
+                    placeholder="Your name"
                   />
                 </div>
 
-                {/* Email Field */}
+                {/* Email */}
                 <div>
-                  <Label htmlFor="email" className="text-white/80 mb-2 block">
+                  <label className="block text-sm font-heading font-bold text-ek-white mb-3 uppercase tracking-[0.08em]">
                     Email Address *
-                  </Label>
-                  <Input
-                    id="email"
-                    name="email"
+                  </label>
+                  <input
                     type="email"
-                    required
+                    name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    onFocus={() => setIsFocused('email')}
-                    onBlur={() => setIsFocused(null)}
-                    className={`bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-orange-500/50 focus:ring-orange-500/20 transition-all duration-300 ${
-                      isFocused === 'email' ? 'transform scale-[1.02]' : ''
-                    }`}
-                    placeholder="john@company.com"
+                    required
+                    className="w-full bg-ek-black border border-ek-border text-ek-white px-4 py-3 font-body focus:outline-none focus:border-ek-gold transition-colors"
+                    placeholder="your@email.com"
                   />
                 </div>
 
-                {/* Company Field */}
+                {/* Phone */}
                 <div>
-                  <Label htmlFor="company" className="text-white/80 mb-2 block">
-                    Company Name
-                  </Label>
-                  <Input
-                    id="company"
-                    name="company"
+                  <label className="block text-sm font-heading font-bold text-ek-white mb-3 uppercase tracking-[0.08em]">
+                    Phone Number (RW) *
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
+                    className="w-full bg-ek-black border border-ek-border text-ek-white px-4 py-3 font-body focus:outline-none focus:border-ek-gold transition-colors"
+                    placeholder="+250 XXX XXX XXX"
+                  />
+                </div>
+
+                {/* Company */}
+                <div>
+                  <label className="block text-sm font-heading font-bold text-ek-white mb-3 uppercase tracking-[0.08em]">
+                    Company Name *
+                  </label>
+                  <input
                     type="text"
+                    name="company"
                     value={formData.company}
                     onChange={handleChange}
-                    onFocus={() => setIsFocused('company')}
-                    onBlur={() => setIsFocused(null)}
-                    className={`bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-orange-500/50 focus:ring-orange-500/20 transition-all duration-300 ${
-                      isFocused === 'company' ? 'transform scale-[1.02]' : ''
-                    }`}
-                    placeholder="Your Company Inc."
+                    required
+                    className="w-full bg-ek-black border border-ek-border text-ek-white px-4 py-3 font-body focus:outline-none focus:border-ek-gold transition-colors"
+                    placeholder="Your company"
                   />
                 </div>
 
-                {/* Message Field */}
+                {/* Role */}
                 <div>
-                  <Label htmlFor="message" className="text-white/80 mb-2 block">
-                    Message *
-                  </Label>
-                  <Textarea
-                    id="message"
-                    name="message"
+                  <label className="block text-sm font-heading font-bold text-ek-white mb-3 uppercase tracking-[0.08em]">
+                    Your Role *
+                  </label>
+                  <select
+                    name="role"
+                    value={formData.role}
+                    onChange={handleChange}
                     required
+                    className="w-full bg-ek-black border border-ek-border text-ek-white px-4 py-3 font-body focus:outline-none focus:border-ek-gold transition-colors"
+                  >
+                    <option value="">Select your role</option>
+                    <option value="CEO">CEO / Founder</option>
+                    <option value="COO">COO / Operations Lead</option>
+                    <option value="Sales Director">Sales Director</option>
+                    <option value="Sales Manager">Sales Manager</option>
+                    <option value="Sales Rep">Sales Rep</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+
+                {/* Challenge */}
+                <div>
+                  <label className="block text-sm font-heading font-bold text-ek-white mb-3 uppercase tracking-[0.08em]">
+                    What&apos;s Your Main Challenge? *
+                  </label>
+                  <select
+                    name="challenge"
+                    value={formData.challenge}
+                    onChange={handleChange}
+                    required
+                    className="w-full bg-ek-black border border-ek-border text-ek-white px-4 py-3 font-body focus:outline-none focus:border-ek-gold transition-colors"
+                  >
+                    <option value="">Select a challenge</option>
+                    <option value="Low close rate">Low close rate</option>
+                    <option value="Team consistency">Team consistency</option>
+                    <option value="No sales system">No sales system</option>
+                    <option value="High turnover">High rep turnover</option>
+                    <option value="Revenue gap">Revenue gap</option>
+                    <option value="Career development">Career development</option>
+                  </select>
+                </div>
+
+                {/* Preferred Date */}
+                <div>
+                  <label className="block text-sm font-heading font-bold text-ek-white mb-3 uppercase tracking-[0.08em]">
+                    Preferred Call Date
+                  </label>
+                  <input
+                    type="date"
+                    name="preferredDate"
+                    value={formData.preferredDate}
+                    onChange={handleChange}
+                    className="w-full bg-ek-black border border-ek-border text-ek-white px-4 py-3 font-body focus:outline-none focus:border-ek-gold transition-colors"
+                  />
+                </div>
+
+                {/* Message */}
+                <div>
+                  <label className="block text-sm font-heading font-bold text-ek-white mb-3 uppercase tracking-[0.08em]">
+                    Additional Notes
+                  </label>
+                  <textarea
+                    name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    onFocus={() => setIsFocused('message')}
-                    onBlur={() => setIsFocused(null)}
-                    rows={6}
-                    className={`bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-orange-500/50 focus:ring-orange-500/20 transition-all duration-300 resize-none ${
-                      isFocused === 'message' ? 'transform scale-[1.02]' : ''
-                    }`}
-                    placeholder="Tell us about your business goals and challenges..."
+                    rows={4}
+                    className="w-full bg-ek-black border border-ek-border text-ek-white px-4 py-3 font-body focus:outline-none focus:border-ek-gold transition-colors resize-none"
+                    placeholder="Anything else you'd like Coach Ezra to know?"
                   />
                 </div>
 
                 {/* Submit Button */}
-                <Button
+                <button
                   type="submit"
-                  size="lg"
-                  className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 shadow-xl shadow-orange-500/30 hover:shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 group"
+                  className="btn-primary w-full justify-center text-base font-bold"
                 >
-                  <Send className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
-                  Send Message
-                </Button>
-              </form>
-            </motion.div>
+                  Schedule Call Now →
+                </button>
 
-            {/* Contact Info */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="space-y-8"
-            >
-              <div>
-                <h2 className="text-white mb-8">Get in Touch</h2>
-                <p className="text-white/70 mb-8">
-                  We're here to answer your questions and help you start your transformation journey. 
-                  Reach out through any of these channels:
+                <p className="text-xs text-ek-text text-center">
+                  We&apos;ll respond within 2 hours during business hours.
                 </p>
+              </form>
+            ) : (
+              <div className="bg-ek-gold/10 border border-ek-gold p-12 text-center">
+                <div className="text-5xl mb-4">✅</div>
+                <h2 className="text-3xl font-heading font-black text-ek-gold mb-4">
+                  Booking Received!
+                </h2>
+                <p className="text-ek-text mb-6">
+                  Thank you for scheduling a strategy call. Coach Ezra will reach out via WhatsApp or email within 2 hours.
+                </p>
+                <Link href="/" className="btn-primary inline-block">
+                  Back to Home →
+                </Link>
               </div>
+            )}
+          </div>
 
-              {/* Contact Details */}
-              <div className="space-y-6">
-                <div className="flex items-start gap-4 group">
-                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-orange-500/20 to-orange-600/20 rounded-xl flex items-center justify-center border border-orange-500/20 group-hover:border-orange-500/40 transition-all duration-300">
-                    <Mail className="w-6 h-6 text-orange-500" />
-                  </div>
-                  <div>
-                    <h4 className="text-white mb-1">Email</h4>
-                    <a
-                      href="mailto:hello@salesflow.com"
-                      className="text-white/70 hover:text-orange-400 transition-colors duration-300"
-                    >
-                      admin@ekcapitalgroup.com
-                    </a>
-                  </div>
+          {/* Sidebar */}
+          <div className="lg:col-span-1">
+            {/* Call Details Card */}
+            <div className="bg-ek-card border border-ek-border p-8 mb-8">
+              <h3 className="font-heading font-black text-lg text-ek-white mb-6">
+                What To Expect
+              </h3>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <span className="text-ek-gold font-bold flex-shrink-0 mt-1">✓</span>
+                  <span className="text-sm text-ek-text">
+                    <strong className="text-ek-white">30-minute call</strong> with Coach Ezra
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-ek-gold font-bold flex-shrink-0 mt-1">✓</span>
+                  <span className="text-sm text-ek-text">
+                    <strong className="text-ek-white">Honest assessment</strong> of your situation
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-ek-gold font-bold flex-shrink-0 mt-1">✓</span>
+                  <span className="text-sm text-ek-text">
+                    <strong className="text-ek-white">Personalized recommendation</strong> for your business
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-ek-gold font-bold flex-shrink-0 mt-1">✓</span>
+                  <span className="text-sm text-ek-text">
+                    <strong className="text-ek-white">No sales pitch</strong> if it&apos;s not right
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            {/* WhatsApp Card */}
+            <div className="bg-ek-card border border-ek-border p-8 mb-8">
+              <h3 className="font-heading font-black text-lg text-ek-white mb-4">
+                Prefer WhatsApp?
+              </h3>
+              <p className="text-sm text-ek-text mb-6">
+                Message Coach Ezra directly for instant response.
+              </p>
+              <a
+                href="https://wa.me/250XXXXXXXX?text=Hi+Coach+Ezra%2C+I+want+to+book+a+strategy+call."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-wa w-full justify-center gap-2"
+              >
+                <MessageCircle size={18} />
+                WhatsApp Now
+              </a>
+            </div>
+
+            {/* Contact Card */}
+            <div className="bg-ek-card border border-ek-border p-8">
+              <h3 className="font-heading font-black text-lg text-ek-white mb-4">
+                Contact Details
+              </h3>
+              <div className="space-y-4 text-sm">
+                <div>
+                  <p className="text-ek-gold font-heading font-bold mb-1">Call</p>
+                  <a href="tel:+250XXXXXXXXX" className="text-ek-text hover:text-ek-gold transition-colors">
+                    +250 XXX XXX XXX
+                  </a>
                 </div>
-
-                <div className="flex items-start gap-4 group">
-                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-orange-500/20 to-orange-600/20 rounded-xl flex items-center justify-center border border-orange-500/20 group-hover:border-orange-500/40 transition-all duration-300">
-                    <Phone className="w-6 h-6 text-orange-500" />
-                  </div>
-                  <div>
-                    <h4 className="text-white mb-1">Phone</h4>
-                    <a
-                      href="tel:+1234567890"
-                      className="text-white/70 hover:text-orange-400 transition-colors duration-300"
-                    >
-                      +250 (790) 567-890
-                    </a>
-                  </div>
+                <div>
+                  <p className="text-ek-gold font-heading font-bold mb-1">Location</p>
+                  <p className="text-ek-text">Kigali, Rwanda</p>
                 </div>
-
-                <div className="flex items-start gap-4 group">
-                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-orange-500/20 to-orange-600/20 rounded-xl flex items-center justify-center border border-orange-500/20 group-hover:border-orange-500/40 transition-all duration-300">
-                    <MapPin className="w-6 h-6 text-orange-500" />
-                  </div>
-                  <div>
-                    <h4 className="text-white mb-1">Office</h4>
-                    <p className="text-white/70">
-                      123 Business Avenue<br />
-                      Kigali, KG 10001<br />
-                      Rwanda
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Social Links */}
-              <div>
-                <h4 className="text-white mb-4">Follow Us</h4>
-                <div className="flex gap-4">
-                  {[
-                    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-                    { icon: Twitter, href: '#', label: 'Twitter' },
-                    { icon: Instagram, href: '#', label: 'Instagram' },
-                  ].map((social, index) => (
-                    <a
-                      key={index}
-                      href={social.href}
-                      aria-label={social.label}
-                      className="w-12 h-12 bg-white/10 hover:bg-gradient-to-br hover:from-orange-500/30 hover:to-orange-600/30 border border-white/10 hover:border-orange-500/30 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110"
-                    >
-                      <social.icon className="w-5 h-5 text-white" />
-                    </a>
-                  ))}
-                </div>
-              </div>
-
-              {/* Office Hours */}
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
-                <h4 className="text-white mb-4">Office Hours</h4>
-                <div className="space-y-2 text-white/70">
-                  <div className="flex justify-between">
-                    <span>Monday - Friday</span>
-                    <span>9:00 AM - 6:00 PM CAT</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Saturday</span>
-                    <span>10:00 AM - 2:00 PM CAT</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Sunday</span>
-                    <span>Closed</span>
-                  </div>
+                <div>
+                  <p className="text-ek-gold font-heading font-bold mb-1">Hours</p>
+                  <p className="text-ek-text">Mon-Fri: 8am-6pm EAT</p>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </main>
   );
 }

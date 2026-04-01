@@ -15,7 +15,7 @@ export default function StrategyCall() {
     preferredDate: '',
     message: '',
   });
-
+  const [showToast, setShowToast] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -23,13 +23,45 @@ export default function StrategyCall() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission (integrate with your backend)
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   // Handle form submission (integrate with your backend)
+  //   console.log('Form submitted:', formData);
+  //   setSubmitted(true);
+  //   setTimeout(() => {
+  //     setSubmitted(false);
+  //     setFormData({
+  //       name: '',
+  //       email: '',
+  //       phone: '',
+  //       company: '',
+  //       role: '',
+  //       challenge: '',
+  //       preferredDate: '',
+  //       message: '',
+  //     });
+  //   }, 3000);
+  // };
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  try {
+    const res = await fetch('https://formspree.io/f/mykbpnly', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (res.ok) {
+      setShowToast(true);
+
+      setTimeout(() => setShowToast(false), 3000);
+      setSubmitted(true);
+
+      // Reset form
       setFormData({
         name: '',
         email: '',
@@ -40,11 +72,23 @@ export default function StrategyCall() {
         preferredDate: '',
         message: '',
       });
-    }, 3000);
-  };
 
+      setTimeout(() => setSubmitted(false), 3000);
+    } else {
+      alert('Something went wrong. Please try again.');
+    }
+  } catch (error) {
+    alert('Network error. Try again.');
+  }
+};
   return (
     <main className="min-h-screen bg-ek-black pt-32 pb-20">
+      {/* Toast */}
+      {showToast && (
+        <div className="fixed top-6 right-6 z-50 bg-green-600 text-white px-6 py-4 rounded shadow-lg animate-slideIn">
+          ✅ Submitted successfully! We’ll contact you shortly.
+        </div>
+      )}
       {/* Breadcrumb */}
       <div className="px-[5%] mb-12">
         <Link
@@ -214,7 +258,7 @@ export default function StrategyCall() {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="btn-primary w-full justify-center text-base font-bold"
+                  className="btn-primary w-full justify-center text-base font-bold transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:brightness-110 active:translate-y-0"
                 >
                   Schedule Call Now →
                 </button>
@@ -283,7 +327,7 @@ export default function StrategyCall() {
                 Message Coach Ezra directly for instant response.
               </p>
               <a
-                href="https://wa.me/250XXXXXXXX?text=Hi+Coach+Ezra%2C+I+want+to+book+a+strategy+call."
+                href="https://wa.me/250790663142?text=Hi+Coach+Ezra%2C+I+want+to+book+a+strategy+call."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-wa w-full justify-center gap-2"
@@ -318,6 +362,28 @@ export default function StrategyCall() {
           </div>
         </div>
       </div>
+            <style jsx>{`
+              @keyframes slideIn {
+                from {
+                  opacity: 0;
+                  transform: translateX(40px);
+                }
+                to {
+                  opacity: 1;
+                  transform: translateX(0);
+                }
+              }
+
+              .animate-slideIn {
+                animation: slideIn 0.3s ease-out;
+              }
+
+              input[type="date"]::-webkit-calendar-picker-indicator {
+                filter: invert(1);
+                cursor: pointer;
+              }
+        
+      `}</style>
     </main>
   );
 }

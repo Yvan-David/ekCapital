@@ -60,7 +60,7 @@ export default function CorporateTraining() {
   return (
     <main className="min-h-screen bg-ek-black pt-32 pb-20">
       {/* Breadcrumb */}
-      <div className="px-[5%] mb-12">
+      {/* <div className="px-[5%] mb-12">
         <Link
           href="/"
           className="inline-flex items-center gap-2 text-ek-text hover:text-ek-gold transition-colors text-sm font-heading font-bold uppercase tracking-[0.08em]"
@@ -68,7 +68,7 @@ export default function CorporateTraining() {
           <ArrowLeft size={16} />
           Back to Home
         </Link>
-      </div>
+      </div> */}
 
       <div className="max-w-6xl mx-auto px-[5%]">
         {/* Header */}
@@ -244,7 +244,7 @@ export default function CorporateTraining() {
               <p className="text-ek-text mb-8 max-w-2xl mx-auto">
                 Schedule a free assessment call. We&apos;ll audit your situation and recommend exactly what your team needs.
               </p>
-              <Link href="/strategy-call" className="btn-primary inline-block">
+              <Link href="/contact" className="btn-primary inline-block">
                 Schedule Free Assessment →
               </Link>
             </div>
@@ -366,7 +366,7 @@ export default function CorporateTraining() {
                 Schedule your free assessment call with Coach Ezra.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/strategy-call" className="btn-primary">
+                <Link href="/contact" className="btn-primary">
                   Book Assessment →
                 </Link>
                 <a

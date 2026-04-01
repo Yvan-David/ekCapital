@@ -89,7 +89,7 @@ export default function ProgramsPage() {
   return (
     <main className="bg-[#0A0A0A] text-[#F5F0E8] min-h-screen font-[family-name:var(--font-dm-sans)]">
       {/* Back to Home */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-[#0A0A0A] border-b border-[#1a1a1a]">
+      {/* <div className="fixed top-0 left-0 right-0 z-50 bg-[#0A0A0A] border-b border-[#1a1a1a]">
         <Link
           href="/"
           className="inline-flex items-center gap-3 px-6 py-4 text-[#C8C2B8] hover:text-[#C8A96E] transition-colors duration-200 font-[family-name:var(--font-syne)] font-bold text-[0.72rem] tracking-[0.2em] uppercase"
@@ -97,7 +97,7 @@ export default function ProgramsPage() {
           <span className="text-base leading-none">←</span>
           Back to Home
         </Link>
-      </div>
+      </div> */}
       {/* Hero */}
       <section className="relative pt-32 pb-20 px-[5%] overflow-hidden">
         <div className="absolute inset-0 bg-[image:linear-gradient(rgba(200,169,110,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(200,169,110,0.04)_1px,transparent_1px)] bg-[size:60px_60px] pointer-events-none" />

@@ -74,7 +74,7 @@ export default function GetCertifiedPage() {
             </div>
             <div className="w-full max-w-sm flex flex-col gap-3">
               <a
-                href="https://wa.me/250XXXXXXXX?text=Hi+Coach+Ezra%2C+I+want+to+register+for+the+next+EKPCS+certification+cohort."
+                href="https://wa.me/250790663142?text=Hi+Coach+Ezra%2C+I+want+to+register+for+the+next+EKPCS+certification+cohort."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-3 bg-[#C8A96E] text-[#0A0A0A] w-full py-4 font-[family-name:var(--font-syne)] font-extrabold text-sm uppercase tracking-wide transition-all hover:bg-[#E8C98A] hover:-translate-y-0.5"

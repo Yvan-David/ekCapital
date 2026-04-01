@@ -132,7 +132,7 @@ export default function CorporateProgramsPage() {
     <main className="bg-[#0A0A0A] text-[#F5F0E8] min-h-screen font-[family-name:var(--font-dm-sans)]">
 
       {/* ── BACK TO HOME ── */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-[#0A0A0A]/95 backdrop-blur-sm border-b border-[#1a1a1a]">
+      {/* <div className="fixed top-0 left-0 right-0 z-50 bg-[#0A0A0A]/95 backdrop-blur-sm border-b border-[#1a1a1a]">
         <Link
           href="/"
           className="inline-flex items-center gap-2 px-6 py-4 text-[#C8C2B8] hover:text-[#C8A96E] transition-colors duration-200 font-[family-name:var(--font-syne)] font-bold text-[0.72rem] tracking-[0.2em] uppercase"
@@ -140,7 +140,7 @@ export default function CorporateProgramsPage() {
           <ArrowLeft size={14} />
           Back to Home
         </Link>
-      </div>
+      </div> */}
 
       {/* ── HERO ── */}
       <section className="relative pt-28 pb-20 px-[5%] overflow-hidden bg-[#111]">

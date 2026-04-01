@@ -83,7 +83,7 @@ export function Hero() {
 
           {/* WhatsApp Button */}
           <a
-            href="https://wa.me/250XXXXXXXX?text=Hi+Coach+Ezra%2C+I+want+to+increase+my+sales+performance+and+revenue.+Please+tell+me+more."
+            href="https://wa.me/250790663142?text=Hi+Coach+Ezra%2C+I+want+to+increase+my+sales+performance+and+revenue.+Please+tell+me+more."
             target="_blank"
             rel="noopener noreferrer"
             className="bg-[#25D366] text-white px-8 py-4 font-['Syne'] font-bold text-sm uppercase tracking-[0.05em] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(37,211,102,0.3)] inline-flex items-center gap-2.5"

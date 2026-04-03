@@ -346,7 +346,7 @@ const handleDropdownItemClick = (e: React.MouseEvent, href: string) => {
             <li key={link.href} className="relative">
               <button
                 onClick={(e) => handleNavClick(e as any, link, index)}
-                className={`flex items-center text-[16px] font-['Syne'] font-semibold tracking-[0.08em] transition-colors duration-200 bg-transparent border-none cursor-pointer py-1 ${
+                className={`flex items-center text-[13px] font-['Syne'] font-semibold tracking-[0.08em] transition-colors duration-200 bg-transparent border-none cursor-pointer py-1 ${
                   openIndex === index ? 'text-[#C8A96E]' : 'text-[#C8C2B8] hover:text-[#C8A96E]'
                 }`}
               >

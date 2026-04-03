@@ -33,7 +33,7 @@ export function AboutSection() {
               {/* Image Container */}
               <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
                 <Image
-                  src="https://images.unsplash.com/photo-1610631066894-62452ccb927c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBjZW8lMjBwb3J0cmFpdCUyMGNvbmZpZGVudHxlbnwxfHx8fDE3NjE2ODM3OTF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                  src="/coach.jpeg"
                   alt="Coach - John Anderson"
                   width={1080}
                   height={1080}
@@ -49,7 +49,7 @@ export function AboutSection() {
               <div className="absolute -bottom-6 -right-6 bg-gradient-to-br from-orange-500 to-orange-600 text-white px-8 py-4 rounded-2xl shadow-2xl shadow-orange-500/30 border border-orange-400/20">
                 <div className="text-center">
                   <div className="text-sm opacity-90">Over</div>
-                  <div className="text-3xl">20 Years</div>
+                  <div className="text-3xl">7 Years</div>
                   <div className="text-sm opacity-90">Experience</div>
                 </div>
               </div>
@@ -64,18 +64,18 @@ export function AboutSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <h2 className="text-white mb-6">
-              Meet the Coach Behind SalesFlow
+              Meet the Coach Behind EK CAPITAL GROUP
             </h2>
             
             <div className="space-y-4 mb-8">
               <p className="text-white/80">
-                John Anderson is a globally recognized sales strategist and executive coach 
+                Esdras Karekezi is a globally recognized sales strategist and executive coach 
                 who has helped hundreds of CEOs and business leaders transform their organizations 
                 through innovative sales architecture and cashflow optimization.
               </p>
               
               <p className="text-white/80">
-                With over 20 years of experience scaling businesses from startup to IPO, 
+                With over 7 years of experience scaling businesses from startup to IPO, 
                 John brings a unique blend of strategic vision and hands-on execution. His 
                 methodology has generated over $2 billion in additional revenue for clients 
                 across diverse industries.
@@ -88,7 +88,7 @@ export function AboutSection() {
             </div>
 
             {/* Values Highlights */}
-            <div className="grid grid-cols-3 gap-4 mb-8">
+            {/* <div className="grid grid-cols-3 gap-4 mb-8">
               {[
                 { label: 'Integrity', icon: '🎯' },
                 { label: 'Excellence', icon: '⭐' },
@@ -102,14 +102,14 @@ export function AboutSection() {
                   <div className="text-white/90 text-sm">{value.label}</div>
                 </div>
               ))}
-            </div>
+            </div> */}
 
             <Link href="/about">
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 transition-all duration-300 group"
               >
-                Learn More About John
+                Learn More About Esdras
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
               </Button>
             </Link>

@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Award, Target, Users, TrendingUp } from 'lucide-react';
 import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
 import { motion } from 'motion/react';
+import Link from 'next/link';
 
 export default function Page() {
   const coreValues = [
@@ -55,8 +56,8 @@ export default function Page() {
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-blue-500/20 rounded-3xl blur-2xl"></div>
                 <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
                   <ImageWithFallback
-                    src="https://images.unsplash.com/photo-1610631066894-62452ccb927c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBjZW8lMjBwb3J0cmFpdCUyMGNvbmZpZGVudHxlbnwxfHx8fDE3NjE2ODM3OTF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                    alt="John Anderson"
+                    src="/coach.jpeg"
+                    alt="Esdras Karekezi"
                     className="w-full h-auto"
                   />
                 </div>
@@ -69,9 +70,9 @@ export default function Page() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h1 className="text-white mb-6">The Visionary Behind SalesFlow</h1>
+              <h1 className="text-white mb-6">The Visionary Behind EK CAPITAL Group</h1>
               <p className="text-white/80 mb-6">
-                John Anderson is more than a business coach—he's a transformation catalyst
+                Esdras Karekezi is more than a business coach—he's a transformation catalyst
                 who has dedicated his career to helping visionary leaders unlock their full potential.
               </p>
               <p className="text-white/80 mb-6">
@@ -81,7 +82,7 @@ export default function Page() {
                 how businesses approach sales and cashflow management.
               </p>
               <p className="text-white/80">
-                Today, John works exclusively with CEOs and executive teams who are ready to
+                Today, Esdras works exclusively with CEOs and executive teams who are ready to
                 break through growth plateaus and build organizations that create lasting impact.
               </p>
             </motion.div>
@@ -182,13 +183,16 @@ export default function Page() {
               and communities. We believe that business success and social responsibility
               are not mutually exclusive—they're interdependent.
             </p>
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 shadow-xl shadow-orange-500/30 hover:shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 group"
-            >
-              Book a Strategy Call
-              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-            </Button>
+            <Link href={'/schedule'}>
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 shadow-xl shadow-orange-500/30 hover:shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 group"
+              >
+                Book a Strategy Call
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+              </Button>
+            </Link>
+
           </motion.div>
         </div>
       </section>

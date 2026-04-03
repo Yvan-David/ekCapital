@@ -1,18 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/sections/Header";
-import { Footer } from "@/sections/Footer";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { LayoutClient } from "@/sections/LayoutClient";
+import { Toaster } from 'react-hot-toast';
 
 export const metadata: Metadata = {
   title: "EK CAPITAL GROUP",
@@ -21,17 +11,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Header/>
-        {children}
-        <Footer/>
+      <body>
+        <LayoutClient>
+          {children}
+          <Toaster position="top-right" reverseOrder={false} />
+        </LayoutClient>
       </body>
     </html>
   );
